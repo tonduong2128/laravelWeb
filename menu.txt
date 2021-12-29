@@ -10,3 +10,38 @@
     1. Tải code Eshop
     2. Copy file index.html của E vào file welcom.php
     3. Đổi lại các path trong "path"=>"{{('path')}}" chưa biết để làm gì (không cần cũng được nhé, --version cũ :)))
+5 : Lập trình website bán hàng bằng Laravel Framework - Cài đặt Theme #2
+    1. Tạo folder pages trong view
+        tên file phải đặt <name>.blade.php, ex: home.blade.php
+    2. Cắt file,
+        1. @extends('welcom') //có thể gọi file home mà có cả welcome//tức home kế thừa lại từ welcome và trong welcome có chổ để xuất hiện
+            @section('content') cho file nào gọi
+            @endsection
+        2. @yield('content') //gọi ở file welcom
+    3. {{URL::to('/trang-chu')}}
+6 : Lập trình website bán hàng bằng Laravel Framework - Tạo Controller trong Laravel
+    1. php artisan make:controller HomeController //tạo controller
+    2. public function index(){
+        return view('pages.home'); //trả về component home
+        }
+7 : Lập trình website bán hàng bằng Laravel Framework - Trang Admin #1
+    //Connect create database
+    1. database.php trong config và file .env
+        thay đổi phù hợp với database
+    2. php artisan migrations
+    3. tải web Admin và thêm router// tạo controller admin
+8 : Lập trình website bán hàng bằng Laravel Framework - Trang Admin #2
+    //cắt trang
+9 : Lập trình website bán hàng bằng Laravel Framework - Trang Admin #3
+    1. cắt section
+    2. tạo cơ sở dữ liệu
+        php artisan make:migration create_admin_table --create=tbl_admin (để tạo các schema)
+        1. php artisan migrate tạo tất cả database //default lỗi do utf8--
+    3. 
+		{{ csrf_field() }}
+        để bảo mật hơn
+    4. $password = $request->input('password'); //lấy dữ liệu từ form gửi lên
+10 : Lập trình website bán hàng bằng Laravel Framework - Đăng xuất
+
+11 : Lập trình website bán hàng bằng Laravel - Danh mục sản phẩm #1
+    1. php artisan make:controller CategoryController
