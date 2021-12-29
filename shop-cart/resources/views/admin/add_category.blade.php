@@ -1,5 +1,5 @@
 @extends('admin_layout')
-@section('add_category')
+@section('admin_content')
 <div class="row">
     <div class="col-lg-12">
             <section class="panel">
@@ -20,10 +20,9 @@
                         </div>
                         <div class="form-group">
                             <select class="form-control input-sm m-bot15">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                            </select>
+                                <option>Ẩn</option>
+                                <option>Hiển thị</option>
+                             </select>
                         </div>
                         <button type="submit" class="btn btn-info">Submit</button>
                     </form>

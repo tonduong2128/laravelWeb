@@ -105,7 +105,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section id="main-content">
 	<section class="wrapper">
 		@yield('admin_content')
-		@yield('add_category')
 	</section>
  <!-- footer -->
 		  <div class="footer">
