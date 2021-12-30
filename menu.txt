@@ -9,7 +9,9 @@
 4 : Lập trình website bán hàng bằng Laravel Framework - Cài đặt Theme
     1. Tải code Eshop
     2. Copy file index.html của E vào file welcom.php
-    3. Đổi lại các path trong "path"=>"{{('path')}}" chưa biết để làm gì (không cần cũng được nhé, --version cũ :)))
+    3. Đổi lại các path trong "path"=>href="{{URL::to('path')}}" chưa biết để làm gì (không cần cũng được nhé, --version cũ :)))
+                                        //để việc load các file
+                                      src="{{asset('')}}"  
 5 : Lập trình website bán hàng bằng Laravel Framework - Cài đặt Theme #2
     1. Tạo folder pages trong view
         tên file phải đặt <name>.blade.php, ex: home.blade.php
@@ -45,3 +47,29 @@
 
 11 : Lập trình website bán hàng bằng Laravel - Danh mục sản phẩm #1
     1. php artisan make:controller CategoryController
+12 : Lập trình website bán hàng bằng Laravel - Danh mục sản phẩm #2
+    1. php artisan make:migration ceate_category_table --create=category_table
+        php artisan migrate
+13 : Lập trình website bán hàng bằng Laravel - Danh mục sản phẩm #3
+    1. return view('admin.all_category')->with("data", $data); //passdata
+14 : Lập trình website bán hàng bằng Laravel - Danh mục sản phẩm #3
+    1. Route::get('/active-status-category/{categoryId}',[CategoryController::class, 'unacctive_status']);
+        thêm vào id
+        //không có ?id=
+15 : Lập trình website bán hàng bằng Laravel - Danh mục sản phẩm #4
+    Thêm sửa
+16 : Lập trình website bán hàng bằng Laravel - Danh mục sản phẩm #5
+    Xóa
+17 : Lập trình website bán hàng bằng Laravel - Hiệu sản phẩm #1
+    Danh mục thương hiệu 
+    1. tạo bảng bằng migration
+        php artisan make:migration create_brand_table --create=table_brand (tên table)
+        1. thực thi :: php artisan migrate
+18 : Lập trình website bán hàng bằng Laravel - Hiệu sản phẩm #2
+19 : Lập trình website bán hàng bằng Laravel - Hiệu sản phẩm #3
+20 : Lập trình website bán hàng bằng Laravel - Sản phẩm #1  
+    1. tạo controller 
+    2. tạo migration  
+        1. php artisan make:migration create-table-product --create=table_product
+21 : Lập trình website bán hàng bằng Laravel - Sản phẩm #2
+    

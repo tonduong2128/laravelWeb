@@ -3,7 +3,7 @@
 <div class="table-agile-info">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Liệt kê danh mục sản phẩm
+        Liệt kê thương hiệu sản phẩm
       </div>
       <div class="row w3-res-tb">
         <div class="col-sm-5 m-b-xs">
@@ -35,7 +35,7 @@
                   <input type="checkbox" class="check-items"><i></i>
                 </label>
               </th>
-              <th>Tên danh mục</th>
+              <th>Tên thương hiệu</th>
               <th>Mô tả</th>
               <th>Hiện thị</th>
               <th>Ngày thêm</th>
@@ -55,11 +55,11 @@
                 <td>
                   <span class="text-ellipsis">
                   @if ($result->status == 1)
-                    <a href="{{URL::to('/unactive-status-category/'.$result->id)}}">
+                    <a href="{{URL::to('/unactive-status-brand/'.$result->id)}}">
                       <i class="fa fa-check-circle " style="font-size: 26px" aria-hidden="true"></i> 
                     </a>
                     @else
-                    <a href="{{URL::to('/active-status-category/'.$result->id)}}" >
+                    <a href="{{URL::to('/active-status-brand/'.$result->id)}}" >
                       <i class="fa fa-circle-thin " style="font-size: 26px" aria-hidden="true"></i>
                     </a>
                   @endif  
@@ -67,10 +67,10 @@
                 </td>
                 <td><span class="text-ellipsis">{{$result->updated_at}}</span></td>
                 <td>
-                  <a href="{{URL::to('/edit-category/'.$result->id)}}" class="active" ui-toggle-class="">
+                  <a href="{{URL::to('/edit-brand/'.$result->id)}}" class="active" ui-toggle-class="">
                     <i class="fa fa-pencil-square-o text-success text-active"></i>
                   </a>
-                  <a href="{{URL::to('/delete-category/'.$result->id)}}" class="active" ui-toggle-class="">
+                  <a href="{{URL::to('/delete-brand/'.$result->id)}}" class="active" ui-toggle-class="">
                     <i class="fa fa-times text-danger text"></i>
                   </a>
                 </td>
@@ -78,7 +78,7 @@
             @empty
             <tr>
               <td colspan="6">
-                <p class="text-danger">Không có danh mục sản phầm nào</p>
+                <p class="text-danger">Không có thương hiệu sản phầm nào</p>
               </td>
             </tr>
             @endforelse
