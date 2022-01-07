@@ -72,4 +72,23 @@
     2. tạo migration  
         1. php artisan make:migration create-table-product --create=table_product
 21 : Lập trình website bán hàng bằng Laravel - Sản phẩm #2
-    
+22 : Lập trình website bán hàng bằng Laravel - Sản phẩm #3
+    1. ->join() //
+    2. 
+        $product = DB::table('table_product')
+            ->join("table_category","table_product.categoryId","=","table_category.id")
+            ->join("table_brand","table_product.brandId","=","table_brand.id")
+            ->select('table_product.*','table_category.name as categoryName', 'table_brand.name as brandName')
+            ->get();
+        //join data dựa vào id của bản này tới bảng kiav
+23 : Lập trình website bán hàng bằng Laravel - Sản phẩm #4
+24 : Lập trình website bán hàng bằng Laravel - Sản phẩm #5
+25 : Lập trình website bán hàng bằng Laravel - Sản phẩm #6
+26 : Lập trình website bán hàng bằng Laravel - Đăng nhập Admin Laravel
+    1. middleware 
+    2. tạo hàm check ngay trong class
+    // Ở bài này sử dụng 2 cách này luôn
+    //doc doc laravel
+27 : Lập trình website bán hàng bằng Laravel - Hiển thị trang Index
+    1. number_format() //hàm
+28 : Lập trình website bán hàng bằng Laravel - Danh mục và thương hiệu trang chủ

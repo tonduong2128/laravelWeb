@@ -14,15 +14,15 @@
                             {{session()->forget('message')}}
                         </div>
                     @endif
-                    <form role="form" action="{{URL::to('/add_product')}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{URL::to('/edit-product/'.$data->id)}}" method="post" enctype="multipart/form-data">
                             @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên sản phẩm</label>
-                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
+                            <input type="text" name="name" value="{{$data->name}}" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giá sản phẩm</label>
-                            <input type="text" name="price" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
+                            <input type="text" name="price" value="{{$data->price}}" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Hình ảnh sản phẩm</label>
@@ -31,19 +31,17 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-                            <textarea rows="4" name="description" class="form-control" id="exampleInputPassword1" placeholder="Mô tả sản phẩm">
-                            </textarea>
+                            <textarea rows="4" name="description"  class="form-control" id="exampleInputPassword1" placeholder="Mô tả sản phẩm">{{$data->description}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Tóm tắt sản phẩm</label>
-                            <textarea rows="4" name="content" class="form-control" id="exampleInputPassword1" placeholder="Mô tả sản phẩm">
-                            </textarea>
+                            <textarea rows="4" name="content" class="form-control" id="exampleInputPassword1" placeholder="Mô tả sản phẩm">{{$data->content}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="status-id">Trạng thái sản phẩm</label>
                             <select name="status" id="status-id" class="form-control input-lg m-bot15">
-                                <option value="0">Ẩn</option>
-                                <option value="1">Hiển thị</option>
+                                <option value="0" {{$data->brandId == 0 ? "selected":""}}>Ẩn</option>
+                                <option value="1" {{$data->brandId == 1 ? "selected":""}}>Hiển thị</option>
                              </select>
                         </div>
                         <div class="form-group">
@@ -58,11 +56,11 @@
                             <label for="status-id">Thương hiệu sản phẩm </label>
                             <select name="brandId" id="status-id" class="form-control input-lg m-bot15">
                                 @foreach ($brand as $item)
-                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                    <option value="{{$item->id}}" {{$data->status == $item->id ? "selected":""}}>{{$item->name}}</option>
                                 @endforeach
                              </select>
                         </div>
-                        <button type="submit" class="btn btn-info">Thêm</button>
+                        <button type="submit" class="btn btn-info">Lưu</button>
                     </form>
                     </div>
 

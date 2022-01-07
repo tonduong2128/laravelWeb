@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+
     public function index()
     {
+        if (session()->get('admin_id')){
+            return redirect('dashboard');
+        };
         return view('admin_login');
     }
     public function show_dashboard()
@@ -30,13 +34,9 @@ class AdminController extends Controller
     }
     public function logout(Request $request)
     {
-        $email = trim($request->input('email')."1");
-        $password = md5(trim($request->input('password')));
-        $result = DB::table('table_admin')->where([['password',$password],['password',$password]])->get();
-        if (count($result)>0){
-            return view('admin.dashboard');
-        } 
-        return view('admin_login');
+        $request->session()->forget('admin_name');
+        $request->session()->forget('admin_id');
+        return redirect('/admin');
     }
 
 }

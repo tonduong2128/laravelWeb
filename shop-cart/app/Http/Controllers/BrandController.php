@@ -18,11 +18,6 @@ class BrandController extends Controller
     }
     public function insert_brand(Request $request)
     {
-        $request->validate([
-            'name'=>"required",
-            'description'=>"required",
-            'status'=>"required",
-        ]);
         $data =[];
         $data["name"]=trim($request->input('name'));
         $data["description"]= trim($request->input('description'));
@@ -48,11 +43,6 @@ class BrandController extends Controller
     }
     public function edit_save_brand(Request $request, $id)
     {
-        $request->validate([
-            'name'=>"required",
-            'description'=>"required",
-            'status'=>"required",
-        ]);
         $data =[];
         $data["name"]=trim($request->input('name'));
         $data["description"]=trim($request->input('description'));
